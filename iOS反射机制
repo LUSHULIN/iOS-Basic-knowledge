@@ -1,0 +1,14 @@
+    //1.通过字符串获取类
+    Class class = NSClassFromString(@"Person");
+    Person *p = [[class alloc] init];
+    
+    //2类名转为
+    Class class1 = [Person class];
+    NSString *className = [NSStringFromClass(class1)];
+    
+    //3SEL的反射
+    SEL selector = NSSelectorFromString(@"setName");
+    [p performSelector:selector withObject:nil];
+    
+    //4 通过方法字符串形式实例化方法
+    NSStringFromSelector(@selector(setName));
